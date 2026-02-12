@@ -10,9 +10,6 @@ RESET := \033[0m
 BIN_DIR := /usr/local/bin
 BINARY := dns
 
-# Paths
-SOURCE := Sources/dns/DNS.swift
-
 .DEFAULT_GOAL := help
 .PHONY: build install uninstall clean rebuild test help
 
@@ -38,7 +35,7 @@ install:
 		sudo chown -R $$(whoami) $(BIN_DIR); \
 	fi
 	@echo "Installing $(BINARY) to $(BIN_DIR)..."
-	@rm -f $(BIN_DIR)/$(BINARY)
+	@if [ -f $(BIN_DIR)/$(BINARY) ]; then rm $(BIN_DIR)/$(BINARY); fi
 	@cp .build/release/$(BINARY) $(BIN_DIR)/$(BINARY)
 	@echo "$(GREEN)Installed!$(RESET)"
 
