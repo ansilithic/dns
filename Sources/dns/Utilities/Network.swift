@@ -1,5 +1,4 @@
 import Foundation
-import CLICore
 
 func maskToCIDR(_ mask: String) -> Int {
     let octets = mask.split(separator: ".").compactMap { Int($0) }
@@ -51,9 +50,4 @@ func resolveIP(_ hostname: String) -> String {
     let cleaned = hostname.hasSuffix(".") ? String(hostname.dropLast()) : hostname
     let result = shell("dig +short \(cleaned) A 2>/dev/null | head -1").output
     return result
-}
-
-func printValue(_ label: String, _ value: String, labelWidth: Int = 16) {
-    let paddedLabel = label.padding(toLength: labelWidth, withPad: " ", startingAt: 0)
-    print("  \(styled(paddedLabel, .gray))\(value)")
 }
