@@ -21,15 +21,15 @@ DNS and network configuration inspector for macOS — resolvers, search domains,
 
 ## Install
 
-Requires Swift 6.0+ and macOS 14+. Depends on [swift-cli-core](https://github.com/ansilithic/swift-cli-core) and [swift-argument-parser](https://github.com/apple/swift-argument-parser).
-
 ```sh
-git clone https://github.com/ansilithic/dns.git
-cd dns
-make build && make install
+brew install ansilithic/tap/dns
 ```
 
-The binary installs to `/usr/local/bin/dns`.
+Or build from source (requires Xcode and macOS 14+):
+
+```sh
+make build && make install
+```
 
 ## Usage
 
