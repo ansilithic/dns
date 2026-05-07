@@ -21,11 +21,7 @@ DNS and network configuration inspector for macOS — resolvers, search domains,
 
 ## Install
 
-```sh
-brew install ansilithic/tap/dns
-```
-
-Or build from source (requires Xcode and macOS 14+):
+Build from source (requires Xcode and macOS 14+):
 
 ```sh
 make build && make install
